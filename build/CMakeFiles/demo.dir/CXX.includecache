@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/dan/ServerBoy/demo.cpp
+iostream
+-
+string
+-
+string.h
+-
+unistd.h
+-
+sstream
+-
+map
+-
+cstring
+-
+memory
+-
+
