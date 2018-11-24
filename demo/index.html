@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html> 
+<head> 
+	<meta charset="UTF-8" />
+	<title>flappy bird</title>
+    <script src="js/phaser.min.js"></script>
+    <script src="js/map1.js"></script>
+    <script src="js/boot.js"></script>
+    
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        canvas {
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+<script>
+    var game = new Phaser.Game(320, 640, Phaser.CANVAS, 'game');
+    game.state.add('boot', DarkCats.Boot);
+
+    game.state.start('boot');
+</script>
+</body>
