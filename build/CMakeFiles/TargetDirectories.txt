@@ -1,4 +1,0 @@
-/home/dan/ServerBoy/build/CMakeFiles/rebuild_cache.dir
-/home/dan/ServerBoy/build/CMakeFiles/edit_cache.dir
-/home/dan/ServerBoy/build/CMakeFiles/demo.dir
-/home/dan/ServerBoy/build/CMakeFiles/serverboy.dir
