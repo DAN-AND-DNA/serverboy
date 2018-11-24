@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.2)
 
 project(serverboy)
 set (CMAKE_BUILD_TYPE "release")
-set(BOY_PATH "/home/$ENV{USER}/ServerBoy/")
+set(BOY_PATH "/home/$ENV{USER}/serverboy/")
 set(CXX_FLAGS
  -std=c++0x                     # c+11
  -g                             # 为了gdb
