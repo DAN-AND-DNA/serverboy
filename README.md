@@ -2,6 +2,8 @@
 Like websocketed，serverboy is also a tool for indie game developers to develop game server. As long as you can write 
 an executeable app (shell, c, c++, go, python, java...) that reads STDIN and writes to STDOUT, serverboy can build a game server for you!
 
+![demo](https://github.com/DAN-AND-DNA/serverboy/blob/master/demo/img/demo1.jpg)
+      
 # deps
 1. golang (just for running demo)
 2. gcc 4.8+
