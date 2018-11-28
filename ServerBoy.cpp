@@ -1,4 +1,5 @@
 #include <ServerBoy.h>
+
 #include <iostream>
 #include <sstream>
 #include <string>
@@ -12,9 +13,12 @@ namespace dan
 {
 namespace proxy
 {
-int ServerBoy::ReadPipeFds[2] = {-1};
-int ServerBoy::WritePipeFds[2] = {-1};
 
+//int ServerBoy::ReadPipeFds[2] = {-1};
+//int ServerBoy::WritePipeFds[2] = {-1};
+
+dan::pipe::PosixPipeistream<char> ServerBoy::stOut;
+dan::pipe::PosixPipeostream<char> ServerBoy::stIn;
 
 ServerBoy::ServerBoy() noexcept:
     m_stHub(),
@@ -74,33 +78,42 @@ ServerBoy::ServerBoy() noexcept:
             message.append(",uid:");
             message.append(std::to_string(*ptrUid));
 
-            message.append("\n");   // for shell
+            //message.append("\n");   // for shell
 
             auto now = std::chrono::high_resolution_clock::now();
-          
+        
+    //        printf("message:%s\n", message.c_str());
+            ServerBoy::stIn << message << std::endl;
+
+            /*
             if(::write(ServerBoy::ReadPipeFds[1], message.c_str(), message.size()) == -1)
             {
                 printf("ERROR: on mse %s\n", ::strerror(errno));
             }
+            */
 
             
-            char buffer[128];
-            auto i = ::read(ServerBoy::WritePipeFds[0], buffer, 128);
+           // char buffer[128];
+            //auto i = ::read(ServerBoy::WritePipeFds[0], buffer, 128);
 
+            std::string strEchoMsg;
+            stOut >> strEchoMsg;
+            //std::getline(stOut, strEchoMsg);
 
-            if(i == -1)
+           // printf("read:%s\n", strEchoMsg.c_str());
+            if(strEchoMsg == "")
             {
                 printf("error\n");
             }
             else
             {
-                std::string strEchoMsg(buffer, i);
-                char* szServerMsg = std::strtok(const_cast<char*>(strEchoMsg.c_str()), " ");
+             //   std::string strEchoMsg(buffer, i);
+                char* szServerMsg = std::strtok(const_cast<char*>(strEchoMsg.c_str()), "|");
                 char* szClientMsg;
                 std::vector<std::string> v;
                 if(szServerMsg != NULL)
                 {
-                    szClientMsg = std::strtok(NULL , " ");
+                    szClientMsg = std::strtok(NULL , "|");
                 }
                
                 std::string ss(szServerMsg);

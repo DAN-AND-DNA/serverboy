@@ -1,6 +1,7 @@
 #pragma once
 
 #include <uWS/uWS.h>
+#include <pipe/PosixPipe.hpp>
 #include <memory>
 #include <unordered_map>
 
@@ -16,8 +17,10 @@ public:
     void Run();
 
 public:
-    static int ReadPipeFds[2];  //从ServerBoy读消息
-    static int WritePipeFds[2]; //往ServerBoy写消息
+    static dan::pipe::PosixPipeistream<char> stOut;
+    static dan::pipe::PosixPipeostream<char> stIn;
+    //static int ReadPipeFds[2];  //从ServerBoy读消息
+    //static int WritePipeFds[2]; //往ServerBoy写消息
 
 private:
     uWS::Hub m_stHub;
@@ -29,3 +32,6 @@ private:
 
 }
 }
+
+
+

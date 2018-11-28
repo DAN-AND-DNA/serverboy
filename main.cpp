@@ -1,6 +1,24 @@
 #include <ServerBoy.h>
-#include <unistd.h>
-#include <sys/wait.h>
+#include <pipe/App.hpp>
+
+int main()
+{
+    dan::app::App stApp("./demo", dan::app::appout > dan::proxy::ServerBoy::stOut, dan::app::appin < dan::proxy::ServerBoy::stIn);
+
+    if(stApp.Running())
+    {
+        dan::proxy::ServerBoy stServerBoy;
+        stServerBoy.Run();
+    }
+
+    int iExitCode = 0;
+    stApp.Wait(iExitCode);
+}
+
+
+
+/*
+
 namespace 
 {
     ::pid_t stChildPid;
@@ -68,12 +86,12 @@ int main()
         }
     }
 
-    dan::proxy::ServerBoy stServerBoy;
-    stServerBoy.Run();
+   // dan::proxy::ServerBoy stServerBoy;
+   // stServerBoy.Run();
 }
 
 
-
+*/
 /*
 int main()
 {
