@@ -17,40 +17,53 @@ an executeable app (shell, c, c++, go, python, java...) that reads STDIN and wri
 1. demo
 
 
-# Stress & benchmarks
+# example Stress
 
 broadcast stress: 
-
-    consume 251 us
-    consume 451 us
-    consume 248 us
-    consume 1151 us
-    consume 259 us
-    consume 788 us
-    consume 216 us
-    consume 223 us
-    consume 460 us
-    consume 261 us
-    consume 292 us
-    consume 241 us
-    consume 1126 us
-    consume 810 us
-    consume 235 us
-    consume 1150 us
-    consume 422 us
-    consume 1002 us
-    consume 243 us
-    consume 255 us
-    consume 383 us
-    consume 232 us
-    consume 236 us
-    consume 292 us
-    consume 289 us
-    consume 1491 us
-    consume 395 us
-    consume 284 us
-    consume 364 us
-    consume 817 us
-    consume 244 us
-    consume 261 us
+ 
+    cosume 157 us
+    cosume 190 us
+    cosume 150 us
+    cosume 847 us
+    cosume 177 us
+    cosume 161 us
+    cosume 119 us
+    cosume 170 us
+    cosume 454 us
+    cosume 518 us
+    cosume 457 us
+    cosume 262 us
+    cosume 586 us
+    cosume 661 us
+    cosume 989 us
+    cosume 216 us
+    cosume 303 us
+    cosume 250 us
+    cosume 172 us
+    cosume 153 us
+    cosume 441 us
+    cosume 151 us
+    cosume 571 us
+    cosume 331 us
+    cosume 249 us
+    cosume 118 us
+    cosume 204 us
+    cosume 189 us
+    cosume 145 us
+    cosume 170 us
+    cosume 152 us
+    cosume 155 us
+    cosume 452 us
+    cosume 121 us
+    cosume 196 us
+    cosume 496 us
+    cosume 353 us
+    cosume 947 us
+    cosume 548 us
+    cosume 934 us
+    cosume 144 us
+    cosume 521 us
+    cosume 117 us
+    cosume 677 us
+    cosume 143 us
  
