@@ -19,7 +19,7 @@ uint8_t* AnBuffer::WritePtr()
 
 uint8_t* AnBuffer::ReadPtr()
 {
-    return nullptr;
+    return &(m_stBackBuffer[m_stReadIndex]);;
 }
 
 uint8_t* AnBuffer::BeginPtr()

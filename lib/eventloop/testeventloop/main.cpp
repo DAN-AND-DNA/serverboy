@@ -3,7 +3,7 @@
 int main()
 {
     {   //// thread 1
-        dan::eventloop::TcpServer stServer(7737, "192.168.0.115");
+        dan::eventloop::TcpServer stServer(7737);
         stServer.Run();
     }
 

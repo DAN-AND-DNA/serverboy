@@ -51,10 +51,12 @@ void TcpServer::PreRun() noexcept
 
     // write
     m_pstServerEvent->FiredWrite([this](){
+        printf("oh~~~~~\n");
     });
 
     // error
     m_pstServerEvent->FiredError([this](){
+        printf("oh~~~~~\n");
     });
 
     // close

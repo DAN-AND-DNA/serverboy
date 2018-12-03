@@ -79,6 +79,17 @@ void Client::echo()
 
                 if(line == "send1")
                 {
+                
+                    const char* szMsg = "echo20187777";
+                    int n= ::send(server_, szMsg, ::strlen(szMsg) + 1, 0);
+
+                    printf("send: %d\n", n);
+                     char buffer[128] ={0};
+                     auto i = ::recv(server_, buffer, 128, 0);
+
+
+                    printf("%d   %s\n",i,buffer); 
+
             //        stLogin.SerializeToArray(reBuffer1,reLen);
               //      uint8_t*result1=(uint8_t*)calloc(stLogin.ByteSize()+6,sizeof(uint8_t));
  

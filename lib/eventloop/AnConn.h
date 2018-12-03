@@ -23,7 +23,8 @@ private:
     uint64_t                    m_ulUid;
     std::unique_ptr<AnSocket>   m_pstClientSocket;
     std::unique_ptr<AnEvent>    m_pstClientEvent;
-    std::unique_ptr<AnBuffer>   m_pstBackBuffer;
+    std::unique_ptr<AnBuffer>   m_pstInBuffer;
+    std::unique_ptr<AnBuffer>   m_pstOutBuffer;
     uint32_t                    m_dwAvgSeqSize;
     TcpServer*                  m_pstOwnerServer;
 };

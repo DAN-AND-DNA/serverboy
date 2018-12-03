@@ -10,9 +10,9 @@ int main(int argc, char ** argv)
 	int option;
 
 	int port = 7737;
-	//string host = "localhost";
+	string host = "localhost";
 
-        string host = "192.168.0.115";
+        //string host = "192.168.0.115";
 	while ((option = getopt(argc, argv, "h:p:")) != -1) {
 		switch (option) {
 			case 'p':
